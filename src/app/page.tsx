@@ -6,6 +6,16 @@ import "keen-slider/keen-slider.min.css";
 import "@/components/home/home.css";
 import projects from "@/data/projects";
 import { useEffect, useState } from "react";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
 
 export interface IProject {
   id: number;
@@ -14,7 +24,7 @@ export interface IProject {
   language: string[];
   img: string;
   link: string;
-  dateUpdated: string;
+  dateCreated: string;
 }
 
 export default function Home() {
@@ -28,10 +38,11 @@ export default function Home() {
     let sortedProjects: IProject[] = projects;
     sortedProjects.sort(
       (a, b) =>
-        new Date(b.dateUpdated).getTime() - new Date(a.dateUpdated).getTime()
+        new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime()
     );
     let sortedArr = sortedProjects.slice(0, 8);
     setFirstFive(sortedArr);
+    // For keen-slider to update when everything is rendered.
     setLoaded(true);
   }, []);
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -72,17 +83,27 @@ export default function Home() {
       },
     ],
   });
+
+  function projClicked(id: number, name: string) {
+    console.log("Project clicked");
+    console.log("id", id);
+    console.log("name", name);
+  }
+  function toLinkedin() {
+    window.open("https://www.linkedin.com/in/rasmus-palm-076a83219", "_blank");
+  }
   return (
     <>
       <Header></Header>
-      <div>Recent changes</div>
+      <div>Recent Projects</div>
       <div className="slider-container">
         {loaded && (
           <div ref={ref} className="keen-slider img-cont">
             {firstFive.map((project, index) => (
               <div
                 key={project.id}
-                className="keen-slider__slide img-style"
+                className="keen-slider__slide lazy__slide img-style"
+                onClick={() => projClicked(project.id, project.title)}
                 style={{
                   backgroundImage: `url(${project.img})`,
                   backgroundSize: "cover",
@@ -95,10 +116,31 @@ export default function Home() {
           </div>
         )}
       </div>
-      {/* Introduction div and some extra text */}
-      {/* <div></div> */}
-      {/* Recent projects slider */}
-      {/* <div></div> */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div>View more projects</div>
+        <Card sx={{ width: 390 }}>
+          <CardHeader title="Welcome to my personal portfolio" />
+          <CardMedia
+            style={{
+              cursor: "pointer",
+              maxWidth: "100%",
+              height: "18rem",
+            }}
+            onClick={toLinkedin}
+            image="/images/Linkedin-profile.png"
+            title="linkedin img and link of Rasmus Palm"
+          />
+          <CardActions>
+            <Button variant="outlined">About Me</Button>
+          </CardActions>
+        </Card>
+      </div>
     </>
   );
 }

@@ -8,6 +8,14 @@
   background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
 }
 
+.img-style {
+  position: relative;
+}
+
+.img-style:hover {
+  border: 3px solid salmon;
+}
+
 .img-cont {
   height: 30vh;
   padding-top: 10px;
