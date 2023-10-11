@@ -10,6 +10,9 @@
 
 .img-style {
   position: relative;
+
+  /* Custom variable */
+  /* background-color: var(--custom-color); */
 }
 
 .img-style:hover {

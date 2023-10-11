@@ -10,12 +10,10 @@ import {
   Button,
   Card,
   CardActions,
-  CardContent,
   CardHeader,
   CardMedia,
-  Typography,
 } from "@mui/material";
-import Image from "next/image";
+import { useTheme } from "@mui/material/styles";
 
 export interface IProject {
   id: number;
@@ -29,6 +27,7 @@ export interface IProject {
 
 export default function Home() {
   // let firstFive: IProject[] = [];
+  const theme = useTheme();
   const [firstFive, setFirstFive] = useState<IProject[]>([]);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -96,6 +95,13 @@ export default function Home() {
     <>
       <Header></Header>
       <div>Recent Projects</div>
+      {/* Using the custom theme */}
+      {/* <Button
+        style={{ backgroundColor: theme.palette.linkCustom }}
+        variant="contained"
+      >
+        tets
+      </Button> */}
       <div className="slider-container">
         {loaded && (
           <div ref={ref} className="keen-slider img-cont">
@@ -124,8 +130,20 @@ export default function Home() {
         }}
       >
         <div>View more projects</div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div>
+          Welcome to my personal portfolio. Here you can find more information
+          about me
+        </div>
         <Card sx={{ width: 390 }}>
-          <CardHeader title="Welcome to my personal portfolio" />
+          <CardHeader title="Hello, I'm Rasmus" />
           <CardMedia
             style={{
               cursor: "pointer",
