@@ -16,11 +16,22 @@
 }
 
 .img-style:hover {
-  border: 3px solid salmon;
+  border: 3px solid #0a6ebd;
 }
 
 .img-cont {
   height: 30vh;
   padding-top: 10px;
   padding-left: 10px;
+}
+
+.card-color {
+  background-color: #11122b !important;
+  color: white !important;
+}
+
+.card-media {
+  cursor: pointer;
+  max-width: 100%;
+  height: 18rem;
 }

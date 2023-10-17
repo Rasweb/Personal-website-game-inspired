@@ -17,6 +17,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import "@/styles/header/header.css";
 
 type Anchor = "left";
 
@@ -25,9 +26,11 @@ export default function Header() {
     { name: "Home", path: "/", id: 1 },
     { name: "Projects", path: "/projects", id: 2 },
     { name: "About", path: "/about", id: 3 },
-    { name: "Settings", path: "/settings", id: 4 },
+    { name: "Settings", path: "/test", id: 4 },
   ];
   const [state, setState] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(1);
+
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -45,6 +48,19 @@ export default function Header() {
       }
     };
 
+  // function handleListItemClick(path: string, id: number) {
+  //   console.log("Item clicked");
+  //   setSelectedIndex(id);
+
+  //   console.log("Selected", selectedIndex);
+  // }
+  const handleListItemClick = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    index: number
+  ) => {
+    setSelectedIndex(index);
+  };
+
   const list = (anchor: Anchor) => (
     <Box
       sx={{ mx: "auto", width: 250 }}
@@ -52,12 +68,15 @@ export default function Header() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <div></div>
       <List>
         {Links.map((text, index) => (
           <ListItem key={text.id} disablePadding>
-            <ListItemButton href={text.path}>
-              <ListItemIcon>
+            {/* href={text.path} */}
+            <ListItemButton
+              selected={selectedIndex === text.id}
+              onClick={(event) => handleListItemClick(event, text.id)}
+            >
+              <ListItemIcon sx={{ color: "white" }}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text.name} />
@@ -71,7 +90,7 @@ export default function Header() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" color="secondary">
           <Toolbar>
             <IconButton
               size="large"
@@ -88,26 +107,32 @@ export default function Header() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <nav>
-          <Drawer
-            anchor="left"
-            open={state}
-            onClose={toggleDrawer("left", false)}
+        {/* <nav style={{ backgroundColor: "red" }}> */}
+        <Drawer
+          anchor="left"
+          open={state}
+          onClose={toggleDrawer("left", false)}
+          PaperProps={{
+            sx: {
+              backgroundColor: "#11122b",
+              color: "white",
+            },
+          }}
+        >
+          {/* {list("left")} */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+            pt={12} // Adjust padding as needed
           >
-            {/* {list("left")} */}
-            <Box
-              display="flex"
-              flexDirection="column"
-              justifyContent="space-between"
-              pt={12} // Adjust padding as needed
-            >
-              {/* Content */}
-              {list("left")}
+            {/* Content */}
+            {list("left")}
 
-              {/* Additional content can be added here */}
-            </Box>
-          </Drawer>
-        </nav>
+            {/* Additional content can be added here */}
+          </Box>
+        </Drawer>
+        {/* </nav> */}
       </Box>
     </>
   );

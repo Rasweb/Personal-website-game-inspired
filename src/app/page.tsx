@@ -1,9 +1,8 @@
 "use client";
 
-import Header from "@/components/header";
-import { useKeenSlider } from "keen-slider/react";
+import Header from "@/components/global/header";
 import "keen-slider/keen-slider.min.css";
-import "@/components/home/home.css";
+import "@/styles/home/home.css";
 import projects from "@/data/projects";
 import { useEffect, useState } from "react";
 import {
@@ -14,19 +13,10 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-
-export interface IProject {
-  id: number;
-  title: string;
-  description: string;
-  language: string[];
-  img: string;
-  link: string;
-  dateCreated: string;
-}
+import ProjectSlider from "@/components/home/project-slider";
+import { IProject } from "@/types/projectTypes";
 
 export default function Home() {
-  // let firstFive: IProject[] = [];
   const theme = useTheme();
   const [firstFive, setFirstFive] = useState<IProject[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -44,44 +34,6 @@ export default function Home() {
     // For keen-slider to update when everything is rendered.
     setLoaded(true);
   }, []);
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    mode: "snap",
-    loop: true,
-    slides: () => [
-      {
-        size: 0.4,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-    ],
-  });
 
   function projClicked(id: number, name: string) {
     console.log("Project clicked");
@@ -94,43 +46,18 @@ export default function Home() {
   return (
     <>
       <Header></Header>
-      <div>Recent Projects</div>
+      <ProjectSlider
+        firstFive={firstFive}
+        loaded={loaded}
+        projClicked={projClicked}
+      ></ProjectSlider>
       {/* Using the custom theme */}
       {/* <Button
         style={{ backgroundColor: theme.palette.linkCustom }}
         variant="contained"
-      >
+        >
         tets
       </Button> */}
-      <div className="slider-container">
-        {loaded && (
-          <div ref={ref} className="keen-slider img-cont">
-            {firstFive.map((project, index) => (
-              <div
-                key={project.id}
-                className="keen-slider__slide lazy__slide img-style"
-                onClick={() => projClicked(project.id, project.title)}
-                style={{
-                  backgroundImage: `url(${project.img})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="img-title">{project.title}</div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <div>View more projects</div>
-      </div>
       <div
         style={{
           display: "flex",
@@ -142,20 +69,21 @@ export default function Home() {
           Welcome to my personal portfolio. Here you can find more information
           about me
         </div>
-        <Card sx={{ width: 390 }}>
+        <Card sx={{ width: 390 }} className="card-color">
           <CardHeader title="Hello, I'm Rasmus" />
           <CardMedia
-            style={{
-              cursor: "pointer",
-              maxWidth: "100%",
-              height: "18rem",
-            }}
+            className="card-media"
             onClick={toLinkedin}
             image="/images/Linkedin-profile.png"
             title="linkedin img and link of Rasmus Palm"
           />
           <CardActions>
-            <Button variant="outlined">About Me</Button>
+            <Button
+              variant="outlined"
+              style={{ backgroundColor: "#1d1e44", color: "#ffffff" }}
+            >
+              About Me
+            </Button>
           </CardActions>
         </Card>
       </div>

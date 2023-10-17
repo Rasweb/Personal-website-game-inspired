@@ -16,12 +16,16 @@ declare module "@mui/material/styles" {
     accentCustom: string;
     linkCustom: string;
     hoverFocus: string;
+    mainText: string;
+    secondaryText: string;
   }
 
   interface PaletteOptions {
     accentCustom: string;
     linkCustom: string;
     hoverFocus: string;
+    mainText: string;
+    secondaryText: string;
   }
 }
 
@@ -45,6 +49,8 @@ const theme = createTheme({
     accentCustom: "#1d1e44",
     linkCustom: "#0078d4",
     hoverFocus: "#0a6ebd",
+    mainText: "#ffffff",
+    secondaryText: "#f0f0f0",
   },
 });
 

@@ -1,0 +1,7 @@
+.Mui-selected {
+  background-color: #0078d4 !important;
+}
+
+.Mui-selected:hover {
+  background-color: red !important;
+}
