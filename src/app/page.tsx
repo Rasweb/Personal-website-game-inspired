@@ -1,23 +1,22 @@
 "use client";
-
 import Header from "@/components/global/header";
 import "keen-slider/keen-slider.min.css";
 import "@/styles/home/home.css";
-import projects from "@/data/projects";
+import projects from "@/data/lists/projects";
 import { useEffect, useState } from "react";
 import {
+  Box,
   Button,
   Card,
   CardActions,
-  CardHeader,
   CardMedia,
+  Typography,
 } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import ProjectSlider from "@/components/home/project-slider";
+import ProjectSlider from "@/components/home/slider/project-slider";
 import { IProject } from "@/types/projectTypes";
+import Footer from "@/components/home/footer/footer";
 
 export default function Home() {
-  const theme = useTheme();
   const [firstFive, setFirstFive] = useState<IProject[]>([]);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -51,42 +50,52 @@ export default function Home() {
         loaded={loaded}
         projClicked={projClicked}
       ></ProjectSlider>
-      {/* Using the custom theme */}
-      {/* <Button
-        style={{ backgroundColor: theme.palette.linkCustom }}
-        variant="contained"
+      <Box className="content-div">
+        <Box className="content-div" sx={{ maxWidth: "40%" }}>
+          <Typography variant="h5" pt={2}>
+            Hello and Welcome
+          </Typography>
+          <Typography variant="h6" align={"center"} paragraph={true}>
+            Here you can find my personal projects, read about my work
+            experience, find my social links and read more about me.
+          </Typography>
+        </Box>
+        <Card
+          sx={{
+            width: 390,
+            backgroundColor: "secondary.main",
+            color: "mainText",
+          }}
         >
-        tets
-      </Button> */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          Welcome to my personal portfolio. Here you can find more information
-          about me
-        </div>
-        <Card sx={{ width: 390 }} className="card-color">
-          <CardHeader title="Hello, I'm Rasmus" />
           <CardMedia
             className="card-media"
             onClick={toLinkedin}
             image="/images/Linkedin-profile.png"
-            title="linkedin img and link of Rasmus Palm"
+            title="linkedin profile image and link of Rasmus Palm"
+            sx={{
+              "&:hover": {
+                border: 3,
+                borderColor: "hoverFocus",
+              },
+            }}
           />
           <CardActions>
             <Button
               variant="outlined"
-              style={{ backgroundColor: "#1d1e44", color: "#ffffff" }}
+              sx={{
+                backgroundColor: "accentCustom",
+                color: "mainText",
+                "&:hover": {
+                  backgroundColor: "hoverFocus",
+                },
+              }}
             >
               About Me
             </Button>
           </CardActions>
         </Card>
-      </div>
+      </Box>
+      <Footer></Footer>
     </>
   );
 }

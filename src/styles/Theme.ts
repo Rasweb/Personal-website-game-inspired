@@ -11,6 +11,8 @@ import { createTheme } from "@mui/material/styles";
 // Neutral Background (#1a1a1a): Section backgrounds
 // Neutral Border (#333333): Borders or dividers between sections.
 
+// TODO: Make a dark/light mode switch, use this link - https://mui.com/material-ui/customization/dark-mode/#toggling-color-mode
+
 declare module "@mui/material/styles" {
   interface Palette {
     accentCustom: string;
@@ -53,5 +55,31 @@ const theme = createTheme({
     secondaryText: "#f0f0f0",
   },
 });
+
+// const lightTheme = createTheme({
+//   palette: {
+//     mode: "light",
+//     primary: {
+//       main: "#ffffff",
+//     },
+//     secondary: {
+//       main: "#11122b",
+//     },
+//     info: {
+//       main: "#2e2f5e",
+//     },
+//     error: {
+//       main: "#ff3e3e",
+//     },
+//     success: {
+//       main: "#0cbc7d",
+//     },
+//     accentCustom: "#1d1e44",
+//     linkCustom: "#0078d4",
+//     hoverFocus: "#0a6ebd",
+//     mainText: "#050517",
+//     secondaryText: "#11122b",
+//   },
+// });
 
 export default theme;

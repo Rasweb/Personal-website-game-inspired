@@ -2,32 +2,23 @@
   display: flex;
   align-items: "center";
   width: 100%;
+  padding-left: 25px;
 }
 
 .img-title {
-  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-}
-
-.img-style {
-  position: relative;
-
-  /* Custom variable */
-  /* background-color: var(--custom-color); */
-}
-
-.img-style:hover {
-  border: 3px solid #0a6ebd;
+  width: 100%;
+  background: linear-gradient(0deg, #11122b 30%, #2e2f5e 100%);
 }
 
 .img-cont {
   height: 30vh;
-  padding-top: 10px;
-  padding-left: 10px;
 }
 
-.card-color {
-  background-color: #11122b !important;
-  color: white !important;
+.content-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
 .card-media {

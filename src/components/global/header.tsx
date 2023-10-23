@@ -18,6 +18,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import "@/styles/header/header.css";
+import { usefulLinks } from "@/data/lists/navLists";
 
 type Anchor = "left";
 
@@ -26,7 +27,6 @@ export default function Header() {
     { name: "Home", path: "/", id: 1 },
     { name: "Projects", path: "/projects", id: 2 },
     { name: "About", path: "/about", id: 3 },
-    { name: "Settings", path: "/test", id: 4 },
   ];
   const [state, setState] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(1);
@@ -69,17 +69,16 @@ export default function Header() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {Links.map((text, index) => (
-          <ListItem key={text.id} disablePadding>
-            {/* href={text.path} */}
+        {usefulLinks.map((item) => (
+          <ListItem key={item.id} disablePadding>
             <ListItemButton
-              selected={selectedIndex === text.id}
-              onClick={(event) => handleListItemClick(event, text.id)}
+              selected={selectedIndex === item.id}
+              onClick={(event) => handleListItemClick(event, item.id)}
             >
-              <ListItemIcon sx={{ color: "white" }}>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <ListItemIcon sx={{ color: "mainText" }}>
+                {<item.icon />}
               </ListItemIcon>
-              <ListItemText primary={text.name} />
+              <ListItemText primary={item.name}></ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
@@ -107,7 +106,6 @@ export default function Header() {
             </Typography>
           </Toolbar>
         </AppBar>
-        {/* <nav style={{ backgroundColor: "red" }}> */}
         <Drawer
           anchor="left"
           open={state}
@@ -119,20 +117,16 @@ export default function Header() {
             },
           }}
         >
-          {/* {list("left")} */}
           <Box
             display="flex"
             flexDirection="column"
             justifyContent="space-between"
-            pt={12} // Adjust padding as needed
+            pt={12}
           >
             {/* Content */}
             {list("left")}
-
-            {/* Additional content can be added here */}
           </Box>
         </Drawer>
-        {/* </nav> */}
       </Box>
     </>
   );
