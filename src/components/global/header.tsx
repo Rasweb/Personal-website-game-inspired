@@ -6,8 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
 import {
   Drawer,
@@ -23,11 +21,6 @@ import { usefulLinks } from "@/data/lists/navLists";
 type Anchor = "left";
 
 export default function Header() {
-  const Links = [
-    { name: "Home", path: "/", id: 1 },
-    { name: "Projects", path: "/projects", id: 2 },
-    { name: "About", path: "/about", id: 3 },
-  ];
   const [state, setState] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(1);
 
@@ -48,17 +41,12 @@ export default function Header() {
       }
     };
 
-  // function handleListItemClick(path: string, id: number) {
-  //   console.log("Item clicked");
-  //   setSelectedIndex(id);
-
-  //   console.log("Selected", selectedIndex);
-  // }
   const handleListItemClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     index: number
   ) => {
     setSelectedIndex(index);
+    console.log("props", event, index);
   };
 
   const list = (anchor: Anchor) => (

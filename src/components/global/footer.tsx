@@ -21,6 +21,7 @@ export default function Footer() {
             className="nav-links"
             sx={{
               color: "mainText",
+              typography: { sm: "h6", xs: "subtitle1" },
               "&:hover": {
                 color: "hoverFocus",
               },
@@ -47,7 +48,7 @@ export default function Footer() {
               },
             }}
           >
-            {<link.icon />}
+            {<link.icon sx={{ typography: { sm: "h4", xs: "h5" } }} />}
           </IconButton>
         ))}
       </Box>

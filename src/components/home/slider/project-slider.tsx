@@ -8,40 +8,47 @@ export default function ProjectSlider(props: IProjectProps) {
   const [ref] = useKeenSlider<HTMLDivElement>({
     mode: "snap",
     loop: true,
-    slides: () => [
-      {
-        size: 0.4,
-        spacing: 0.01,
+    breakpoints: {
+      "(min-width: 400px)": {
+        slides: { perView: 1 },
       },
-      {
-        size: 0.15,
-        spacing: 0.01,
+      "(min-width: 1000px)": {
+        slides: () => [
+          {
+            size: 0.4,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+          {
+            size: 0.15,
+            spacing: 0.01,
+          },
+        ],
       },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-      {
-        size: 0.15,
-        spacing: 0.01,
-      },
-    ],
+    },
   });
   return (
     <div
@@ -51,11 +58,11 @@ export default function ProjectSlider(props: IProjectProps) {
       }}
     >
       <div>
-        <Typography variant="h5" sx={{ padding: "25px 25px 20px" }}>
+        <Typography variant="h5" sx={{ padding: "25px 25px 10px" }}>
           Recent Projects
         </Typography>
       </div>
-      <div className="slider-container">
+      <div className="slider-container custom-slider-container">
         {props.loaded && (
           <div ref={ref} className="keen-slider img-cont">
             {props.firstFive.map((project) => (
@@ -99,6 +106,7 @@ export default function ProjectSlider(props: IProjectProps) {
               paddingTop: "2px",
               color: "secondaryText",
               cursor: "pointer",
+              typography: { sm: "h6", xs: "subtitle1" },
               "&:hover": {
                 color: "hoverFocus",
               },

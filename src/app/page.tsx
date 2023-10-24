@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import ProjectSlider from "@/components/home/slider/project-slider";
 import { IProject } from "@/types/projectTypes";
-import Footer from "@/components/home/footer/footer";
+import Footer from "@/components/global/footer";
 
 export default function Home() {
   const [firstFive, setFirstFive] = useState<IProject[]>([]);
@@ -50,19 +50,23 @@ export default function Home() {
         loaded={loaded}
         projClicked={projClicked}
       ></ProjectSlider>
-      <Box className="content-div">
-        <Box className="content-div" sx={{ maxWidth: "40%" }}>
-          <Typography variant="h5" pt={2}>
+      <Box className="content-div" sx={{ paddingBottom: "30px;" }}>
+        <Box className="content-div text-div">
+          <Typography sx={{ typography: { sm: "h5", xs: "h6" } }}>
             Hello and Welcome
           </Typography>
-          <Typography variant="h6" align={"center"} paragraph={true}>
+          <Typography
+            align="center"
+            paragraph={true}
+            sx={{ typography: { sm: "h6", xs: "subtitle1" } }}
+          >
             Here you can find my personal projects, read about my work
             experience, find my social links and read more about me.
           </Typography>
         </Box>
         <Card
+          className="card-container"
           sx={{
-            width: 390,
             backgroundColor: "secondary.main",
             color: "mainText",
           }}
@@ -81,8 +85,8 @@ export default function Home() {
           />
           <CardActions>
             <Button
-              variant="outlined"
               sx={{
+                typography: { sm: "subtitle2", xs: "body2" },
                 backgroundColor: "accentCustom",
                 color: "mainText",
                 "&:hover": {
