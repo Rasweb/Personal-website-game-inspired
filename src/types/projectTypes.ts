@@ -7,3 +7,10 @@ export interface IProject {
   link: string;
   dateCreated: string;
 }
+
+export interface INavList {
+  name: string;
+  path: string;
+  icon: any;
+  id: number;
+}

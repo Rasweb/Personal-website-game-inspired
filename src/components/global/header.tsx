@@ -17,13 +17,14 @@ import {
 } from "@mui/material";
 import "@/styles/header/header.css";
 import { usefulLinks } from "@/data/lists/navLists";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Anchor = "left";
 
 export default function Header() {
   const [state, setState] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(1);
-
+  const pathname = usePathname();
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -41,14 +42,6 @@ export default function Header() {
       }
     };
 
-  const handleListItemClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    index: number
-  ) => {
-    setSelectedIndex(index);
-    console.log("props", event, index);
-  };
-
   const list = (anchor: Anchor) => (
     <Box
       sx={{ mx: "auto", width: 250 }}
@@ -58,16 +51,25 @@ export default function Header() {
     >
       <List>
         {usefulLinks.map((item) => (
-          <ListItem key={item.id} disablePadding>
-            <ListItemButton
-              selected={selectedIndex === item.id}
-              onClick={(event) => handleListItemClick(event, item.id)}
-            >
-              <ListItemIcon sx={{ color: "mainText" }}>
-                {<item.icon />}
-              </ListItemIcon>
-              <ListItemText primary={item.name}></ListItemText>
-            </ListItemButton>
+          <ListItem
+            key={item.id}
+            disablePadding
+            sx={{
+              "&:hover": {
+                border: 3,
+                borderColor: "hoverFocus",
+                color: "hoverFocus",
+              },
+            }}
+          >
+            <Link href={item.path} style={{ width: "100%" }} passHref>
+              <ListItemButton selected={pathname === item.path}>
+                <ListItemIcon sx={{ color: "mainText" }}>
+                  {<item.icon />}
+                </ListItemIcon>
+                <ListItemText primary={item.name}></ListItemText>
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -111,7 +113,6 @@ export default function Header() {
             justifyContent="space-between"
             pt={12}
           >
-            {/* Content */}
             {list("left")}
           </Box>
         </Drawer>

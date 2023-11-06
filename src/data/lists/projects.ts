@@ -3,7 +3,7 @@ const projects = [
     id: 1,
     title: "First Personal portfolio",
     description:
-      "This is my old personal portfolio. The projects are dynamically generated, using Class and Objects with JavaScript, the class is created using a constructor. This website uses 50% scss, 28% javascript, and 22% html",
+      "This is my first personal portfolio. The projects are dynamically generated, using Class and Objects with JavaScript, the class is created using a constructor. This website uses 50% scss, 28% javascript, and 22% html",
     language: ["SCSS", "JavaScript", "HTML"],
     img: "/images/PersonalPortfolioOld.png",
     link: "https://github.com/Rasweb/Personal-portfolio.git",
@@ -158,6 +158,24 @@ const projects = [
     img: "/images/VuxenJuice.png",
     link: "https://github.com/Rasweb/booking-system.git",
     dateCreated: "2022-08-17 12:07",
+  },
+  {
+    id: 17,
+    title: "Second personal portfolio",
+    description:
+      "This is my second portfolio created using react and typescript with tailwind",
+    language: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Styled Components",
+      "HTML",
+      "CSS",
+      "Tailwind",
+    ],
+    img: "/images/secondPersonalPortfolio.png",
+    link: "https://github.com/Rasweb/Personal-Portfolio-React",
+    dateCreated: "2022-05-30 14:34",
   },
 ];
 

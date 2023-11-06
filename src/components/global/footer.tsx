@@ -15,7 +15,6 @@ export default function Footer() {
         {usefulLinks.map((link) => (
           <Link
             key={link.id}
-            target="_blank"
             rel="noopener"
             href={link.path}
             className="nav-links"
