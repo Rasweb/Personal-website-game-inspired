@@ -177,6 +177,16 @@ const projects = [
     link: "https://github.com/Rasweb/Personal-Portfolio-React",
     dateCreated: "2022-05-30 14:34",
   },
+  {
+    id: 18,
+    title: "CM Web UI",
+    description: "",
+    language: ["Vue.js 2", "JavaScript", "HTML", "CSS", "Tailwind"],
+    img: "/images/CMWebUI.png",
+    // img: "",
+    link: "https://www.nexusgroup.com/sv/",
+    dateCreated: "2022-10-01 09:00",
+  },
 ];
 
 export default projects;

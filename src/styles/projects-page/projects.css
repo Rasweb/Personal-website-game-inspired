@@ -1,0 +1,47 @@
+.hover-style {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-style:hover {
+  transform: scale(1.1);
+}
+
+.image-container {
+  width: 100%;
+  /* position: unset !important; */
+  position: relative;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.proj-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-cont {
+  width: 94% !important;
+  padding-top: 20px;
+}
+
+.item-title {
+  width: 100%;
+  padding-left: 10px;
+}
+@media only screen and (min-width: 720px) {
+  .proj-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item-cont {
+    padding-top: 20px;
+    width: 30% !important;
+  }
+}
