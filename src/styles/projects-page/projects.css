@@ -6,19 +6,6 @@
   transform: scale(1.1);
 }
 
-.image-container {
-  width: 100%;
-  /* position: unset !important; */
-  position: relative;
-}
-
-.image {
-  object-fit: contain;
-  width: 100% !important;
-  position: relative !important;
-  height: unset !important;
-}
-
 .proj-cont {
   display: flex;
   flex-direction: column;

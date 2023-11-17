@@ -16,12 +16,25 @@
   }
 }
 
+body {
+  color: #ffff !important;
+  background-color: #050517 !important;
+}
+
 .img-title {
   width: 100%;
   background: linear-gradient(0deg, #11122b 30%, #2e2f5e 100%);
 }
 
-body {
-  color: #ffff !important;
-  background-color: #050517 !important;
+/*  Required for responsive Next.js Images component */
+.image-container {
+  width: 100%;
+  position: relative;
+}
+
+/*  Required for responsive Next.js Images component */
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
 }

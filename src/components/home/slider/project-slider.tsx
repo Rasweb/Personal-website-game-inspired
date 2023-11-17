@@ -2,7 +2,7 @@
 
 import { useKeenSlider } from "keen-slider/react";
 import { IProjectProps } from "./sliderTypes";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Link, Typography } from "@mui/material";
 
 export default function ProjectSlider(props: IProjectProps) {
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -66,27 +66,33 @@ export default function ProjectSlider(props: IProjectProps) {
         {props.loaded && (
           <div ref={ref} className="keen-slider img-cont">
             {props.firstFive.map((project) => (
-              <Box
-                key={project.id}
-                className="keen-slider__slide lazy__slide"
-                sx={{
-                  backgroundImage: `url(${project.img})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  cursor: "pointer",
-                  "&:hover": {
-                    border: 3,
-                    borderColor: "hoverFocus",
-                  },
-                }}
-                onClick={() => props.projClicked(project.id, project.title)}
-              >
-                <Container className="img-title">
-                  <Typography variant="subtitle1" noWrap>
-                    {project.title}
-                  </Typography>
-                </Container>
-              </Box>
+              <Link href={`project/${project.id}`} key={project.id}>
+                <Box
+                  key={project.id}
+                  className="keen-slider__slide lazy__slide"
+                  sx={{
+                    backgroundImage: `url(${project.img})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    cursor: "pointer",
+                    "&:hover": {
+                      border: 3,
+                      borderColor: "hoverFocus",
+                    },
+                  }}
+                  onClick={() => props.projClicked(project.id, project.title)}
+                >
+                  <Container className="img-title">
+                    <Typography
+                      variant="subtitle1"
+                      noWrap
+                      sx={{ color: "secondaryText" }}
+                    >
+                      {project.title}
+                    </Typography>
+                  </Container>
+                </Box>
+              </Link>
             ))}
           </div>
         )}

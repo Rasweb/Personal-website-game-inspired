@@ -8,6 +8,7 @@ import { IProject } from "@/types/projectTypes";
 import { useEffect, useState } from "react";
 import projects from "@/data/lists/projects";
 import "@/styles/projects-page/projects.css";
+import ImageCont from "../global/image-cont";
 
 export default function ProjectsPage() {
   const [sortedProj, setSortedProj] = useState<IProject[]>([]);
@@ -49,16 +50,7 @@ export default function ProjectsPage() {
                 >
                   {item.title}
                 </Typography>
-                <div className={"image-container"}>
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    layout="fill"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority
-                    className={"image"}
-                  />
-                </div>
+                <ImageCont src={item.img} alt={item.title} />
               </Link>
             </Container>
           ))}

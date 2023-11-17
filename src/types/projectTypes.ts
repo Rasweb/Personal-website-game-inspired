@@ -8,9 +8,9 @@ export interface IProject {
   dateCreated: string;
 }
 
-export interface INavList {
-  name: string;
-  path: string;
-  icon: any;
-  id: number;
+export interface IGlobalImage {
+  src: string;
+  alt: string;
+  // Optional prop
+  customCss?: string;
 }

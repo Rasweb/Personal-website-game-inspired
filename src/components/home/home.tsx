@@ -28,23 +28,13 @@ export default function HomePage() {
     // For keen-slider to update when everything is rendered.
     setLoaded(true);
   }, []);
-
-  function projClicked(id: number, name: string) {
-    console.log("Project clicked");
-    console.log("id", id);
-    console.log("name", name);
-  }
   function toLinkedin() {
     window.open("https://www.linkedin.com/in/rasmus-palm-076a83219", "_blank");
   }
   return (
     <>
       <Header></Header>
-      <ProjectSlider
-        firstFive={firstFive}
-        loaded={loaded}
-        projClicked={projClicked}
-      ></ProjectSlider>
+      <ProjectSlider firstFive={firstFive} loaded={loaded}></ProjectSlider>
       <Box className="content-div" sx={{ paddingBottom: "30px;" }}>
         <AboutBox />
         <CardBox toLinkedin={toLinkedin} />

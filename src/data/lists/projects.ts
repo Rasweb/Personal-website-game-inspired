@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 1,
-    title: "First Personal portfolio",
+    title: "First portfolio",
     description:
       "This is my first personal portfolio. The projects are dynamically generated, using Class and Objects with JavaScript, the class is created using a constructor. This website uses 50% scss, 28% javascript, and 22% html",
     language: ["SCSS", "JavaScript", "HTML"],
@@ -111,7 +111,7 @@ const projects = [
   },
   {
     id: 12,
-    title: "Vue3 todo assignment",
+    title: "Vue3 todo",
     description:
       "This is a vue3 todo list assignment from Medieinstitutet. Vue3 todo was built for smaller screens and you can add, remove and mark todos as done. It uses 72% vue, 10% javascript, 8% html, 6% scss, and 3% typescript.",
     language: ["Vue", "JavaScript", "HTML", "SCSS", "TypeScript"],
@@ -141,7 +141,7 @@ const projects = [
   },
   {
     id: 15,
-    title: "React JS Context E-shop",
+    title: "React.js E-shop",
     description:
       "This is a react js e-shop. I created this project because I wanted to practice on context and React JS. The data is from the Fake Store API. It uses 93% javascript, 5% html, and 2% css.",
     language: ["JavaScript", "HTML", "CSS"],
@@ -161,7 +161,7 @@ const projects = [
   },
   {
     id: 17,
-    title: "Second personal portfolio",
+    title: "Second portfolio",
     description:
       "This is my second portfolio created using react and typescript with tailwind",
     language: [
@@ -182,10 +182,19 @@ const projects = [
     title: "CM Web UI",
     description: "",
     language: ["Vue.js 2", "JavaScript", "HTML", "CSS", "Tailwind"],
-    img: "/images/CMWebUI.png",
-    // img: "",
+    img: "/images/Confidential.png",
     link: "https://www.nexusgroup.com/sv/",
     dateCreated: "2022-10-01 09:00",
+  },
+  {
+    id: 19,
+    title: "Sunrises",
+    description:
+      "Medusa is an open-source headless commerce engine that enables developers to create amazing digital commerce experiences.",
+    language: ["Next.js", "Medusa", "TypeScript", "HTML", "CSS"],
+    img: "/images/Confidential.png",
+    link: "https://www.sunrises.se/",
+    dateCreated: "2022-12-03 17:35",
   },
 ];
 

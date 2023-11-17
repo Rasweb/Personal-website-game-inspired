@@ -1,0 +1,13 @@
+.specific-height {
+  height: 50% !important;
+  object-fit: fill;
+}
+
+.info-style {
+  width: 50% !important;
+}
+
+.about-cont {
+  display: flex;
+  flex-direction: column;
+}
