@@ -105,21 +105,23 @@ export default function ProjectSlider(props: IProjectProps) {
         }}
       >
         <div>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              paddingTop: "2px",
-              color: "secondaryText",
-              cursor: "pointer",
-              typography: { sm: "h6", xs: "subtitle1" },
-              "&:hover": {
-                color: "hoverFocus",
-              },
-            }}
-          >
-            View more projects
-          </Typography>
+          <Link href="/projects">
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{
+                paddingTop: "2px",
+                color: "secondaryText",
+                cursor: "pointer",
+                typography: { sm: "h6", xs: "subtitle1" },
+                "&:hover": {
+                  color: "hoverFocus",
+                },
+              }}
+            >
+              View more projects
+            </Typography>
+          </Link>
         </div>
       </div>
     </div>

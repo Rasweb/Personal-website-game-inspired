@@ -8,10 +8,7 @@ export interface ITopRowProps {
   link: string;
 }
 
-export interface IAboutRowProps {
+export interface IDetailsProps {
   description: string;
-}
-
-export interface ITechStack {
   language: string[];
 }

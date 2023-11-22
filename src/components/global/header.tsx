@@ -91,9 +91,20 @@ export default function Header() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Menu
-            </Typography>
+            <Link href={"/"}>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  "&:hover": {
+                    color: "hoverFocus",
+                  },
+                }}
+              >
+                Menu
+              </Typography>
+            </Link>
           </Toolbar>
         </AppBar>
         <Drawer

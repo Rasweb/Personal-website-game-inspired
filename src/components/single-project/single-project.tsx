@@ -2,15 +2,22 @@
 import Footer from "@/components/global/footer";
 import Header from "@/components/global/header";
 import projects from "@/data/lists/projects";
-import { Box, Container } from "@mui/material";
+import {
+  Box,
+  Container,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 import { IProject } from "@/types/projectTypes";
 import { useEffect, useState } from "react";
 import "@/styles/single-project/project.css";
 import { ISingleProjectProps } from "./singleProjectTypes";
 import ImageCont from "../global/image-cont";
 import TopRow from "./top-row/top-row";
-import AboutRow from "./about-row/about-row";
-import TechStack from "./tech-stack/tech-stack";
+import DetailsRow from "./details-row/details";
 
 export default function SingleProject(props: ISingleProjectProps) {
   const [currentProj, setCurrentProj] = useState<IProject[]>([]);
@@ -27,26 +34,20 @@ export default function SingleProject(props: ISingleProjectProps) {
   return (
     <>
       <Header />
-      <Box className="bob">
-        {currentProj.map((project) => (
-          <Container key={project.id}>
-            <ImageCont
-              src={project.img}
-              alt={project.title}
-              customCss="specific-height"
-            />
-            <Container sx={{ backgroundColor: "info.main" }}>
-              <TopRow
-                title={project.title}
-                dateCreated={project.dateCreated}
-                link={project.link}
-              />
-              <AboutRow description={project.description} />
-              <TechStack language={project.language} />
-            </Container>
-          </Container>
-        ))}
-      </Box>
+      {currentProj.map((proj) => (
+        <Box className="info-cont" key={proj.id}>
+          <ImageCont src={proj.img} alt={proj.title} />
+          <TopRow
+            title={proj.title}
+            dateCreated={proj.dateCreated}
+            link={proj.link}
+          ></TopRow>
+          <DetailsRow
+            description={proj.description}
+            language={proj.language}
+          ></DetailsRow>
+        </Box>
+      ))}
       <Footer />
     </>
   );

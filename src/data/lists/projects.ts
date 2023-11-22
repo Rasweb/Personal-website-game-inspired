@@ -195,7 +195,7 @@ const projects = [
     id: 18,
     title: "CM Web UI",
     description:
-      "This is CM Web UI a project I worked on when I was an intern and then an employee at Nexus Group Global. I was at Nexus for approximately 1 year, I was an intern connected to my education at Medieinstitutet Sweden, then I was employed for 3 months. Under that time I worked with full-stack developers and help them with front-end, learned from a frontend consultant with 6 years of experience, developed a modern responsive website and implemented a design-system from a ux/ui developer to ensure consistency across web-pages. The code is confidential and the website was planed to be included in a future package.",
+      "This is CM Web UI a project I worked on when I was an intern and then an employee at Nexus Group Global. I was at Nexus for approximately 1 year, I was an intern connected to my education at Medieinstitutet Sweden, then I was employed for 3 months. Under that time I worked with full-stack developers and helped them with front-end, learned from a frontend consultant with 6 years of experience, developed a modern responsive website and implemented a design-system from a ux/ui developer to ensure consistency across web-pages. The code is confidential and the website was planed to be included in a future package.",
     language: ["Vue.js 2", "JavaScript", "HTML", "CSS", "Tailwind"],
     img: "/images/Confidential.png",
     link: "https://www.nexusgroup.com/sv/",
