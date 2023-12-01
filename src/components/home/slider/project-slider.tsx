@@ -80,7 +80,6 @@ export default function ProjectSlider(props: IProjectProps) {
                       borderColor: "hoverFocus",
                     },
                   }}
-                  onClick={() => props.projClicked(project.id, project.title)}
                 >
                   <Container className="img-title">
                     <Typography

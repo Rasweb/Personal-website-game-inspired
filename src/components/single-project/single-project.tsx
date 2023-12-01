@@ -2,15 +2,7 @@
 import Footer from "@/components/global/footer";
 import Header from "@/components/global/header";
 import projects from "@/data/lists/projects";
-import {
-  Box,
-  Container,
-  Link,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Box } from "@mui/material";
 import { IProject } from "@/types/projectTypes";
 import { useEffect, useState } from "react";
 import "@/styles/single-project/project.css";

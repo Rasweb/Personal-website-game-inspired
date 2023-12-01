@@ -11,6 +11,5 @@ export interface IProject {
 export interface IGlobalImage {
   src: string;
   alt: string;
-  // Optional prop
   customCss?: string;
 }

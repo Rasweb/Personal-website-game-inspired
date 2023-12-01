@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardMedia } from "@mui/material";
+import { Button, Card, CardActions, CardMedia, Link } from "@mui/material";
 import { ICardBoxProps } from "./card-boxTypes";
 
 export default function CardBox(props: ICardBoxProps) {
@@ -24,18 +24,20 @@ export default function CardBox(props: ICardBoxProps) {
           }}
         />
         <CardActions>
-          <Button
-            sx={{
-              typography: { sm: "subtitle2", xs: "body2" },
-              backgroundColor: "accentCustom",
-              color: "mainText",
-              "&:hover": {
-                backgroundColor: "hoverFocus",
-              },
-            }}
-          >
-            About Me
-          </Button>
+          <Link href="/about">
+            <Button
+              sx={{
+                typography: { sm: "subtitle2", xs: "body2" },
+                backgroundColor: "accentCustom",
+                color: "mainText",
+                "&:hover": {
+                  backgroundColor: "hoverFocus",
+                },
+              }}
+            >
+              About Me
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </>
