@@ -17,7 +17,6 @@ export default function SingleProject(props: ISingleProjectProps) {
   useEffect(() => {
     let allProjects: IProject[] = projects;
 
-    // Goes through the project list and finds the matching one
     let oneProj = allProjects.filter((x) => x.id == props.currentID);
 
     setCurrentProj(oneProj);

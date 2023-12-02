@@ -1,4 +1,3 @@
-// Must be here for useState to work
 "use client";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";

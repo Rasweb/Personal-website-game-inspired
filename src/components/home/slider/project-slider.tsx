@@ -3,6 +3,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import { IProjectProps } from "./sliderTypes";
 import { Box, Container, Link, Typography } from "@mui/material";
+import Image from "next/image";
 
 export default function ProjectSlider(props: IProjectProps) {
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -16,34 +17,34 @@ export default function ProjectSlider(props: IProjectProps) {
         slides: () => [
           {
             size: 0.4,
+            spacing: 0.02,
+          },
+          {
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
           {
-            size: 0.15,
-            spacing: 0.01,
-          },
-          {
-            size: 0.15,
+            size: 0.2,
             spacing: 0.01,
           },
         ],
@@ -64,32 +65,35 @@ export default function ProjectSlider(props: IProjectProps) {
       </div>
       <div className="slider-container custom-slider-container">
         {props.loaded && (
-          <div ref={ref} className="keen-slider img-cont">
+          <div ref={ref} className="keen-slider">
             {props.firstFive.map((project) => (
               <Link href={`project/${project.id}`} key={project.id}>
                 <Box
                   key={project.id}
                   className="keen-slider__slide lazy__slide"
-                  sx={{
-                    backgroundImage: `url(${project.img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    cursor: "pointer",
-                    "&:hover": {
-                      border: 3,
-                      borderColor: "hoverFocus",
-                    },
-                  }}
                 >
-                  <Container className="img-title">
-                    <Typography
-                      variant="subtitle1"
-                      noWrap
-                      sx={{ color: "secondaryText" }}
-                    >
-                      {project.title}
-                    </Typography>
-                  </Container>
+                  <div className="image-slider">
+                    <div className="image-container">
+                      <Image
+                        className="lazy__slide image "
+                        src={project.img}
+                        alt={project.title}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority
+                        width={200}
+                        height={500}
+                      />
+                    </div>
+                    <Container className="img-title ot-tex">
+                      <Typography
+                        variant="subtitle1"
+                        noWrap
+                        sx={{ color: "secondaryText" }}
+                      >
+                        {project.title}
+                      </Typography>
+                    </Container>
+                  </div>
                 </Box>
               </Link>
             ))}

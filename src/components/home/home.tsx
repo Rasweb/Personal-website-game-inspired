@@ -15,9 +15,6 @@ export default function HomePage() {
   const [firstFive, setFirstFive] = useState<IProject[]>([]);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    // GMT+ 2
-
-    // Sorted by showing recent changes first
     let sortedProjects: IProject[] = projects;
     sortedProjects.sort(
       (a, b) =>
@@ -25,7 +22,6 @@ export default function HomePage() {
     );
     let sortedArr = sortedProjects.slice(0, 8);
     setFirstFive(sortedArr);
-    // For keen-slider to update when everything is rendered.
     setLoaded(true);
   }, []);
   function toLinkedin() {

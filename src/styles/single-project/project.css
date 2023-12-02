@@ -1,8 +1,3 @@
-.specific-height {
-  height: 50% !important;
-  object-fit: fill;
-}
-
 .info-cont {
   display: flex;
   flex-direction: column;

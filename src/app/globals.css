@@ -26,13 +26,11 @@ body {
   background: linear-gradient(0deg, #11122b 30%, #2e2f5e 100%);
 }
 
-/*  Required for responsive Next.js Images component */
 .image-container {
   width: 100%;
   position: relative;
 }
 
-/*  Required for responsive Next.js Images component */
 .image {
   object-fit: contain;
   width: 100% !important;

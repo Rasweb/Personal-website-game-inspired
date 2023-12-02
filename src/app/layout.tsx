@@ -17,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* To override the mui styles */}
         <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
       </body>
     </html>

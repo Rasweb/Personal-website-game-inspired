@@ -53,28 +53,43 @@ export default function Footer() {
       </Box>
       <Box>
         <Container>
-          <Link
-            href="https://icons8.com/"
-            sx={{
-              color: "mainText",
-              "&:hover": {
-                color: "hoverFocus",
-              },
-            }}
-          >
-            <Typography>Icons by icons8</Typography>
-          </Link>
-          <Link
-            href="https://mui.com/material-ui/material-icons/"
-            sx={{
-              color: "mainText",
-              "&:hover": {
-                color: "hoverFocus",
-              },
-            }}
-          >
-            <Typography>and MUI Icons</Typography>
-          </Link>
+          <div style={{ display: "flex" }}>
+            <Link
+              href="https://icons8.com/"
+              sx={{
+                color: "mainText",
+                "&:hover": {
+                  color: "hoverFocus",
+                },
+              }}
+            >
+              <Typography pr={1}>Icons by icons8</Typography>
+            </Link>
+            <Link
+              href="https://mui.com/material-ui/material-icons/"
+              sx={{
+                color: "mainText",
+                "&:hover": {
+                  color: "hoverFocus",
+                },
+              }}
+            >
+              <Typography>and MUI Icons</Typography>
+            </Link>
+          </div>
+          <div>
+            <Link
+              href="https://keen-slider.io/"
+              sx={{
+                color: "mainText",
+                "&:hover": {
+                  color: "hoverFocus",
+                },
+              }}
+            >
+              <Typography>Image slider by Keen Slider</Typography>
+            </Link>
+          </div>
         </Container>
       </Box>
     </Box>

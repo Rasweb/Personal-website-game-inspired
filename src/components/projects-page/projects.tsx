@@ -3,7 +3,6 @@
 import { Box, Container, Link, Typography } from "@mui/material";
 import Footer from "../global/footer";
 import Header from "../global/header";
-import Image from "next/image";
 import { IProject } from "@/types/projectTypes";
 import { useEffect, useState } from "react";
 import projects from "@/data/lists/projects";
@@ -15,7 +14,6 @@ export default function ProjectsPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Sorted by showing recent changes first
     let rawProjects: IProject[] = projects;
     rawProjects.sort(
       (a, b) =>
