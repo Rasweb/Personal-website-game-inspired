@@ -211,6 +211,16 @@ const projects = [
     link: "https://www.sunrises.se/",
     dateCreated: "2022-12-03 17:35",
   },
+  {
+    id: 20,
+    title: "Frontend Mentor Newsletter sign-up",
+    description:
+      "This is a solution to the Newsletter sign-up form with success message challenge on Frontend Mentor. This was also the first time I tried Angular and Angular Material.",
+    language: ["Angular", "TypeScript", "Angular Material", "CSS"],
+    img: "/images/newsletterSignUp.png",
+    link: "https://frontend-mentor-newsletter-github-pages.vercel.app/",
+    dateCreated: "2024-01-03 10:00",
+  },
 ];
 
 export default projects;

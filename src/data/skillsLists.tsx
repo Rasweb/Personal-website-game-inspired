@@ -9,6 +9,7 @@ import nextjsIcon from "../../public/icons/icons8-nextjs-50.png";
 import expressjsIcon from "../../public/icons/icons8-express-js-50.png";
 import githubIcon from "../../public/icons/icons8-github-50.png";
 import gitIcon from "../../public/icons/icons8-git-50.png";
+import angularIcon from "../../public/icons/icons8-angular-48.png";
 
 const workedSkills = [
   {
@@ -77,6 +78,12 @@ const workedSkills = [
     title: "Git",
     icon: gitIcon,
     tooltipLink: "https://git-scm.com/",
+  },
+  {
+    id: 12,
+    title: "Angular",
+    icon: angularIcon,
+    tooltipLink: "https://angular.io/",
   },
 ];
 
