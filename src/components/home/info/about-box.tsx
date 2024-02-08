@@ -13,7 +13,8 @@ export default function AboutBox() {
           sx={{ typography: { sm: "h6", xs: "subtitle1" } }}
         >
           Here you can find my personal projects, read about my work experience,
-          find my social links and read more about me.
+          find my social links and read more about me. The images are
+          screenshots so the quality may vary.
         </Typography>
       </Box>
     </>
